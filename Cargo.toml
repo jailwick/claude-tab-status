@@ -1,0 +1,22 @@
+[package]
+name = "claude-tab-status"
+version = "0.1.0"
+edition = "2021"
+description = "Zellij plugin that mirrors Claude Code's status glyph into the names of tabs named by hand"
+license = "MIT"
+publish = false
+
+# The plugin binary imports zellij's host functions, which only zellij provides; its logic is
+# tested through the library.
+[[bin]]
+name = "claude-tab-status"
+test = false
+
+[dependencies]
+zellij-tile = "0.45.1"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true

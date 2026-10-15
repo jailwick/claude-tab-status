@@ -1,0 +1,6 @@
+[build]
+target = "wasm32-wasip1"
+
+# `cargo test` runs the tests as wasm, like the plugin itself.
+[target.wasm32-wasip1]
+runner = "wasmtime"
